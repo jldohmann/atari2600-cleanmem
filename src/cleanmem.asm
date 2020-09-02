@@ -24,6 +24,7 @@ memloop:
 ; File ROM size to exactly 4KB
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-  ORG $FFFC
-  .word start   ; reset vector at $FFFC (where program starts)
-  .word start   ; interrupt vector at $FFFE (unused in Atari VCS)
+.org $FFFC
+.segment "VECTORS"
+.addr start   ; reset vector at $FFFC (where program starts)
+.addr start   ; interrupt vector at $FFFE (unused in Atari VCS)
